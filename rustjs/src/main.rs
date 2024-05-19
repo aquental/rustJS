@@ -15,5 +15,11 @@ async fn run_js(file_path: &str) -> Result<(), AnyError> {
 }
 
 fn main() {
-    println!("Hello, world!");
+    let runtime = tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()
+        .unwrap();
+    if let Err(error) = runtime.block_on(run_js("./example.js")) {
+        eprintln!("error: {}", error);
+    }
 }
