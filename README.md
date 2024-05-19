@@ -1,2 +1,2 @@
-# rustJS
-integrating a JS runtime inside a Rust app
+# Rust/JS
+## Integrating a JS runtime inside a Rust app.
